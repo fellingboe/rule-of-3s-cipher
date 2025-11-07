@@ -14,7 +14,11 @@ def caesar(plaintext, shift):
 def findShiftValue(text):
     words = text.split()    # splitting the words by their spaces
     if len(words) < 3 or len(words[2]) < 3:     # If the english sentence is less than 3 words long, or the 3rd word has less than 3 letters
-        raise Exception("Third word must be ≥ 3 letters")
+        raise Exception("Third word must be ≥ 3 letters.  "
+                        + "First word found was " + words[0]
+                        + ".  Second word found was " + words[1]
+                        + ".  Third word found was " + words[2]
+                        + ".  Fourth word found was " + words[3])
     return ord(words[2][2].lower()) - 96  # a=1     # returns the number of the 3rd letter of the 3rd word
 
 
@@ -87,4 +91,5 @@ elif encryptOrDecrypt == "2":
     print ("\n\n" + deCypherText(inputString))  # Printing the newly decrypted result
 
 else:
+
     raise Exception("Please ensure you only type \"1\" or \"2\"")
